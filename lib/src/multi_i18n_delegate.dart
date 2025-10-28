@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_i18n/flutter_i18n.dart';
 import 'package:flutter_i18n/utils/message_printer.dart';
 import 'package:flutter_i18n/utils/plural_translator.dart';
 import 'package:flutter_i18n/utils/simple_translator.dart';
@@ -41,8 +40,8 @@ class MultiI18nDelegate<T extends MultiI18n> extends LocalizationsDelegate<T> {
 
   @override
   bool shouldReload(final MultiI18nDelegate<T> old) {
-    return this.currentLocale == null ||
-        this.currentLocale == old.currentLocale;
+    return currentLocale == null ||
+        currentLocale == old.currentLocale;
   }
 
   String translate(

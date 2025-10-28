@@ -2,12 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/widgets.dart';
 import 'package:flutter_i18n/flutter_i18n.dart';
-import 'package:flutter_i18n/loaders/file_translation_loader.dart';
-import 'package:flutter_i18n/loaders/translation_loader.dart';
 import 'package:flutter_i18n/models/loading_status.dart';
-import 'package:flutter_i18n/utils/plural_translator.dart';
-import 'package:flutter_i18n/utils/simple_translator.dart';
-import 'package:intl/intl.dart' as intl;
 import 'package:rxdart/subjects.dart';
 
 export 'package:flutter_i18n/flutter_i18n_delegate.dart';
@@ -43,7 +38,7 @@ abstract class MultiI18n {
     MissingTranslationHandler? missingTranslationHandler,
   }) {
     this.translationLoader = translationLoader ?? FileTranslationLoader();
-    this._loadingStream.add(LoadingStatus.notLoaded);
+    _loadingStream.add(LoadingStatus.notLoaded);
     this.missingTranslationHandler =
         missingTranslationHandler ?? (key, locale) {};
     this.keySeparator = keySeparator;
@@ -51,13 +46,13 @@ abstract class MultiI18n {
 
   /// Used to load the locale translation file
   Future<bool> load() async {
-    this._loadingStream.add(LoadingStatus.loading);
+    _loadingStream.add(LoadingStatus.loading);
     decodedMap = await translationLoader!.load();
     _localeStream.add(locale);
-    this._loadingStream.add(LoadingStatus.loaded);
+    _loadingStream.add(LoadingStatus.loaded);
     return true;
   }
 
   /// The locale used for the translation logic
-  get locale => this.translationLoader!.locale;
+  get locale => translationLoader!.locale;
 }
