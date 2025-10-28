@@ -131,21 +131,11 @@ This allows multiple isolated i18n contexts to coexist, which is especially usef
 
 ## 🧰 Dependencies
 -   [flutter_i18n](https://pub.dev/packages/flutter_i18n)
--   [rxdart](https://pub.dev/packages/rxdart)
 
-## 🧑‍💻 Contributing
+## 🧑‍💻 Contributors
 
-Contributions are welcome!
-
-1.  Fork the repository
-    
-2.  Create a feature branch: `git checkout -b feature/my-feature`
-    
-3.  Commit changes: `git commit -m "Add my feature"`
-    
-4.  Push to branch: `git push origin feature/my-feature`
-    
-5.  Open a Pull Request
+[Mohammed Shakib] (@shakib1989)
+[Shuvo Prosad Sarnakar] (@shuvoprosadsarnakar)
 
 ## 🪪 License
 This project is licensed under the **MIT License** — see the LICENSE file for details.
